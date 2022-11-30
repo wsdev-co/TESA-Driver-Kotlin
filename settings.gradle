@@ -1,0 +1,26 @@
+pluginManagement {
+    repositories {
+
+        mavenCentral()
+
+        google()
+
+        maven {
+            url 'https://jitpack.io'
+        }
+
+//        gradlePluginPortal()
+    }
+}
+
+
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        google()
+    }
+}
+rootProject.name = "TESADriver-Kotlin"
+include ':app'
+include ':TESADriverKotlin'
