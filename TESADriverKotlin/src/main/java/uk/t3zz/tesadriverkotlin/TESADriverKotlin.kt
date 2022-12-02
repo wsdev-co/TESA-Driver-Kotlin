@@ -37,7 +37,7 @@ public class TESADriverKotlin(
         this.ws_connection = client.newWebSocket(request.build(), this)
     }
 
-    public fun command(cmd: String, payload: MutableMap<String, Any>): Any? {
+    public fun command(cmd: String, payload: MutableMap<String, Any>): String? {
 
         if (this.ws_connection != null) {
             // connection established
@@ -76,7 +76,13 @@ public class TESADriverKotlin(
                             // expected frame
 
                             println("${this.cls_name}.command: expected frame")
-                            return this.driver_buffer!!.payload
+
+                            // original payload
+                            val payload_a = this.driver_buffer!!.payload
+
+                            val payload_j = this.serialize(payload_a)
+
+                            return payload_j
                         } else {
                             // unexpected frame
                             println("${this.cls_name}.command: unexpected frame")
@@ -112,16 +118,18 @@ public class TESADriverKotlin(
 
     public fun serialize(input: Any): String? {
         val output = this.gson.toJson(input)
-        println("serialize.output: $output")
+//        println("serialize.output: $output")
 
         if (output.isEmpty()) {
+            println("serialize.output: negative")
             return null
         } else {
+            println("serialize.output: positive")
             return output
         }
     }
 
-    public fun deserialize(input: String): Map<*, *>? {
+    public fun deserialize(input: String): Map<*,*>? {
         val output: Map<*, *> = this.gson.fromJson(input, Map::class.java) as Map<*, *>
         println("deserialize.output: $output")
 
