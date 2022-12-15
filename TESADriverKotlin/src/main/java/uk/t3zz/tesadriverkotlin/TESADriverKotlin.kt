@@ -28,13 +28,20 @@ public class TESADriverKotlin(
     private val cls_name: String = "TESADriverKotlin"
 
     public fun open_connection() {
-        val client = OkHttpClient.Builder().readTimeout(15, TimeUnit.SECONDS).build()
-        val request = Request.Builder().url("$protocol$host/$path")
-        request.addHeader("Engine-Permission-Access", epa)
-        request.addHeader("App-Type", app_type.toString())
-        request.addHeader("Account-ID", account_id)
-        request.addHeader("Engine-Dynamic-Hash", edn)
-        this.ws_connection = client.newWebSocket(request.build(), this)
+        if (this.ws_connection == null) {
+            val client = OkHttpClient.Builder().readTimeout(15, TimeUnit.SECONDS).build()
+            val request = Request.Builder().url("$protocol$host/$path")
+            request.addHeader("Engine-Permission-Access", epa)
+            request.addHeader("App-Type", app_type.toString())
+            request.addHeader("Account-ID", account_id)
+            request.addHeader("Engine-Dynamic-Hash", edn)
+            this.ws_connection = client.newWebSocket(request.build(), this)
+
+            println("${cls_name}.open_connection: new connection")
+        } else {
+            println("${cls_name}.open_connection: already established")
+        }
+
     }
 
     public fun command(cmd: String, payload: MutableMap<String, Any>): String? {
@@ -66,7 +73,7 @@ public class TESADriverKotlin(
                 if (is_sent) {
                     println("${this.cls_name}.command: sent")
 
-                    event_flag.thread_wait(10)
+                    event_flag.thread_wait(5)
 
                     if (this.driver_buffer != null) {
                         // received
