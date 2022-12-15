@@ -3,6 +3,7 @@ plugins {
     id("java-library")
     id("org.jetbrains.kotlin.jvm")
     id("maven-publish")
+//    id("kotlin-parcelize")
 }
 
 java {
@@ -30,7 +31,6 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.4.4")
     implementation("org.apache.logging.log4j:log4j-core:2.19.0")
     implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.19.0")
-
 }
 
 
