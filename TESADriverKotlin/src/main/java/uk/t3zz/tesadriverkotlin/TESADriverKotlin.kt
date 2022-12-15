@@ -18,7 +18,7 @@ public class TESADriverKotlin(
     private val app_type: Int,
     private val account_id: String,
     private val edn: String = ""
-) : WebSocketListener() {
+): WebSocketListener() {
 
     // constants && variables
     private var ws_connection: WebSocket? = null
