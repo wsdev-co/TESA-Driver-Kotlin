@@ -31,6 +31,7 @@ dependencies {
     implementation("ch.qos.logback:logback-classic:1.4.4")
     implementation("org.apache.logging.log4j:log4j-core:2.19.0")
     implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.19.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
 }
 
 
