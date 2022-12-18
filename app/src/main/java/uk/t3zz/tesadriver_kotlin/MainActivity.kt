@@ -11,10 +11,9 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.tooling.preview.Preview
 import com.example.tesadriver_kotlin.ui.theme.TESADriverKotlinTheme
-import com.example.tesadriverkotlin.AppType
-import com.example.tesadriverkotlin.TESADriverKotlin
+import uk.t3zz.tesadriverkotlin.AppType
+import uk.t3zz.tesadriverkotlin.TESADriverKotlin
 
 
 class MainActivity : ComponentActivity() {

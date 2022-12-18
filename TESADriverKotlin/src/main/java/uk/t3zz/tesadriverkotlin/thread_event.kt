@@ -57,7 +57,7 @@ class ThreadEvent {
             if (!is_waiting) {
                 return
             }
-            is_waiting = false
+            is_waiting = false 
         }
         channel.trySend(Unit).isSuccess
     }
