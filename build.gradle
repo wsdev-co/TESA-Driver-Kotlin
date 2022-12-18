@@ -15,13 +15,6 @@ plugins {
 
 }
 
-dependencies {
-
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
-
-//apply plugin: 'com.android.library'
-//apply plugin: 'kotlin-android'
-
-//task clean(type: Delete) {
-//    delete rootProject.buildDir
-//}

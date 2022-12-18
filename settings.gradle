@@ -9,7 +9,7 @@ pluginManagement {
             url 'https://jitpack.io'
         }
 
-//        gradlePluginPortal()
+        gradlePluginPortal()
     }
 }
 

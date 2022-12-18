@@ -3,6 +3,7 @@ package com.example.tesadriver_kotlin
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
@@ -29,18 +30,14 @@ class MainActivity : ComponentActivity() {
             account_id = "TA134"
         )
 
+        tesa_driver.open_connection()
+
         setContent {
             TESADriverKotlinTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
 
-                    Button(onClick = {
-//                        repeat(10) {
-//                                val command_response = tesa_driver.command(cmd = "GetBusinessAccount", payload = mutableMapOf())
-//                        }
-                    }) {
-                        Greeting("Android")
-                    }
+
                 }
             }
         }
@@ -48,14 +45,21 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String) {
-    Text(text = "Hello $name!")
-}
+fun Greeting(name: String, tesa_driver: TESADriverKotlin) {
 
-@Preview(showBackground = true)
-@Composable
-fun DefaultPreview() {
-    TESADriverKotlinTheme {
-        Greeting("Android")
+    Row {
+        Text(text = "Hello!")
+
+        Button(onClick = {
+            repeat(1_0) {
+                val command_response = tesa_driver.command(
+                    cmd = "GetBusinessAccount",
+                    payload = mutableMapOf()
+                )
+            }
+        }) {
+            Text("Button")
+        }
     }
 }
+

@@ -1,7 +1,5 @@
 package com.example.tesadriverkotlin
 
-
-//import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.google.gson.JsonParseException
 import okhttp3.*
@@ -10,6 +8,9 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 import uk.t3zz.tesadriverkotlin.ThreadEvent
 
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
+import androidx.lifecycle.ViewModel
 
 public class TESADriverKotlin(
     private val protocol: String,
@@ -19,7 +20,7 @@ public class TESADriverKotlin(
     private val app_type: Int,
     private val account_id: String,
     private val edn: String = ""
-): WebSocketListener() {
+): WebSocketListener(), ViewModel() {
 
     // constants && variables
     private var ws_connection: WebSocket? = null
@@ -27,6 +28,7 @@ public class TESADriverKotlin(
     private var driver_buffer: IOFrame? = null
     private val gson: Gson = Gson()
     private val cls_name: String = "TESADriverKotlin"
+    public var is_sync: MutableState<Boolean> = mutableStateOf<Boolean>(false)
 
     public fun open_connection() {
         if (this.ws_connection == null) {
@@ -120,6 +122,10 @@ public class TESADriverKotlin(
             println("${this.cls_name}.command: connection not established")
             return null
         }
+    }
+
+    public fun onTESAppSync(cmd: String, runnable: Runnable): Unit {
+
     }
 
     public fun sha256(to_hash: String = "ws.Dev"): String {
