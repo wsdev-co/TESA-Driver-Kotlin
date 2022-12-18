@@ -18,21 +18,21 @@ dependencies {
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
 
-    // serialization/deserialization/encoding/decoding
-    implementation("com.google.code.gson:gson:2.10")
-
-    // websocket
-    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.10")
-
-    // multi-threading
-    implementation("io.ktor:ktor-client-core:2.1.3")
-
-    // logging
-    implementation("io.github.microutils:kotlin-logging-jvm:3.0.4")
-    implementation("ch.qos.logback:logback-classic:1.4.4")
-    implementation("org.apache.logging.log4j:log4j-core:2.19.0")
-    implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.19.0")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+//    // serialization/deserialization/encoding/decoding
+//    implementation("com.google.code.gson:gson:2.10")
+//
+//    // websocket
+//    implementation("com.squareup.okhttp3:okhttp:5.0.0-alpha.10")
+//
+//    // multi-threading
+//    implementation("io.ktor:ktor-client-core:2.1.3")
+//
+//    // logging
+//    implementation("io.github.microutils:kotlin-logging-jvm:3.0.4")
+//    implementation("ch.qos.logback:logback-classic:1.4.4")
+//    implementation("org.apache.logging.log4j:log4j-core:2.19.0")
+//    implementation("org.apache.logging.log4j:log4j-slf4j-impl:2.19.0")
+//    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
 }
 
 
