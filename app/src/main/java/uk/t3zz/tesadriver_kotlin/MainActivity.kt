@@ -35,8 +35,7 @@ class MainActivity : ComponentActivity() {
             TESADriverKotlinTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
-
-
+                    Greeting(tesa_driver)
                 }
             }
         }
@@ -44,7 +43,7 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, tesa_driver: TESADriverKotlin) {
+fun Greeting(tesa_driver: TESADriverKotlin) {
 
     Row {
         Text(text = "Hello!")
@@ -59,6 +58,8 @@ fun Greeting(name: String, tesa_driver: TESADriverKotlin) {
         }) {
             Text("Button")
         }
+
+
     }
 }
 

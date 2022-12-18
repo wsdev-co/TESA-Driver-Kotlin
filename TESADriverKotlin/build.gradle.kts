@@ -12,13 +12,13 @@ java {
 }
 
 dependencies {
-    implementation(kotlin("stdlib-jdk8"))
-    // ViewModel
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
-    // ViewModel utilities for Compose
-    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
-
-    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
+//    implementation(kotlin("stdlib-jdk8"))
+//    // ViewModel
+//    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
+//    // ViewModel utilities for Compose
+//    implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.5.1")
+//
+//    implementation("androidx.lifecycle:lifecycle-extensions:2.2.0")
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
