@@ -12,6 +12,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.tesadriver_kotlin.ui.theme.TESADriverKotlinTheme
+import com.example.tesadriverkotlin.AppType
+import com.example.tesadriverkotlin.TESADriverKotlin
 
 
 class MainActivity : ComponentActivity() {
@@ -33,9 +35,9 @@ class MainActivity : ComponentActivity() {
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colors.background) {
 
                     Button(onClick = {
-                        repeat(10) {
-                                val command_response = tesa_driver.command(cmd = "GetBusinessAccount", payload = mutableMapOf())
-                        }
+//                        repeat(10) {
+//                                val command_response = tesa_driver.command(cmd = "GetBusinessAccount", payload = mutableMapOf())
+//                        }
                     }) {
                         Greeting("Android")
                     }
