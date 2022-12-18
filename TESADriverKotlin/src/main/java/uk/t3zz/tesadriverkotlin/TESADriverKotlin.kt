@@ -74,7 +74,7 @@ public class TESADriverKotlin(
                 if (is_sent) {
                     println("${this.cls_name}.command: sent")
 
-                    event_flag.thread_wait(5)
+                    event_flag.thread_wait(3)
 
                     if (this.driver_buffer != null) {
                         // received
@@ -90,7 +90,11 @@ public class TESADriverKotlin(
 
                             val payload_j = this.serialize(payload_a)
 
+                            // resetting buffer
+                            this.driver_buffer = null
+
                             return payload_j
+
                         } else {
                             // unexpected frame
                             println("${this.cls_name}.command: unexpected frame")

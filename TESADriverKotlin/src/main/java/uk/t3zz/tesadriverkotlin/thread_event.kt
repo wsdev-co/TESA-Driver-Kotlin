@@ -32,8 +32,7 @@ class ThreadEvent {
         // block until timeout or notify
         runBlocking {
             // Set up our delay before calling offer.
-            val job = launch(Dispatchers.IO)
-            {
+            val job = launch(Dispatchers.IO) {
                 delay((seconds * 1000))
                 channel.trySend(Unit).isSuccess
             }

@@ -16,6 +16,7 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.6.4")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1")
 
     // serialization/deserialization/encoding/decoding
     implementation("com.google.code.gson:gson:2.10")
@@ -45,7 +46,7 @@ afterEvaluate {
 
                 groupId = "com.github.wsdev"
                 artifactId = "TESADriver-Kotlin"
-                version = "0.0.5"
+                version = "0.0.6"
 
             }
         }
