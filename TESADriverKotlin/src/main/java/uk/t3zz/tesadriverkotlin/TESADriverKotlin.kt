@@ -46,7 +46,7 @@ public class TESADriverKotlin(
 
     }
 
-    public fun command(cmd: String, payload: MutableMap<String, Any>): String? {
+    public fun command(cmd: String, payload: MutableMap<String, Any?>): String? {
 
         if (this.ws_connection != null) {
             // connection established
