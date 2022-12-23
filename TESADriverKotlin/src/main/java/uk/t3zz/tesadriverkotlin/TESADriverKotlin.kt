@@ -29,6 +29,10 @@ public class TESADriverKotlin(
     private val cls_name: String = "TESADriverKotlin"
 //    public var is_sync: MutableState<Boolean> = mutableStateOf<Boolean>(false)
 
+    init {
+        this.gson.serializeNulls()
+    }
+
     public fun open_connection() {
         if (this.ws_connection == null) {
             val client = OkHttpClient.Builder().readTimeout(15, TimeUnit.SECONDS).build()
