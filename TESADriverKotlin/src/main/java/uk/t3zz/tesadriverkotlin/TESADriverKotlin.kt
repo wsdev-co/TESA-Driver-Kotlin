@@ -1,6 +1,7 @@
 package uk.t3zz.tesadriverkotlin
 
 import com.google.gson.Gson
+import com.google.gson.GsonBuilder
 import com.google.gson.JsonParseException
 import okhttp3.*
 import java.security.MessageDigest
@@ -25,13 +26,10 @@ public class TESADriverKotlin(
     private var ws_connection: WebSocket? = null
     private val event_flag: ThreadEvent = ThreadEvent()
     private var driver_buffer: IOFrame? = null
-    private val gson: Gson = Gson()
+    private val gson: Gson = GsonBuilder().serializeNulls().create()
     private val cls_name: String = "TESADriverKotlin"
 //    public var is_sync: MutableState<Boolean> = mutableStateOf<Boolean>(false)
 
-    init {
-        this.gson.serializeNulls()
-    }
 
     public fun open_connection() {
         if (this.ws_connection == null) {
